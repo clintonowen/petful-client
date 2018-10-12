@@ -49,7 +49,8 @@ class Dashboard extends Component {
           <h1>Welcome to Petful</h1>
         </header>
 
-        <div className="grid">
+        <div className="pets grid">
+          <h2>Here are the pets available for adoption:</h2>
           {pets}
         </div>
       </div>
