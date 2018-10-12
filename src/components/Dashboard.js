@@ -48,11 +48,12 @@ class Dashboard extends Component {
         <header className="Dash-header">
           <h1>Welcome to Petful</h1>
         </header>
-
-        <div className="pets grid">
+        <main className="pets">
           <h2>Here are the pets available for adoption:</h2>
-          {pets}
-        </div>
+          <div className="grid">
+            {pets}
+          </div>
+        </main>
       </div>
     );
   }

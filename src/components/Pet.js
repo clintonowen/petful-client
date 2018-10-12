@@ -5,7 +5,7 @@ class Pet extends Component {
   render() {
     const pet = this.props.petToAdopt;
     return (
-      <section className="pet-info column">
+      <article className="pet-info column">
         <header>
           <h2>{pet.name}</h2>
           <img src={pet.imageURL} alt={pet.imageDescription} />
@@ -23,7 +23,7 @@ class Pet extends Component {
           </dl>
           <button onClick={() => this.props.onAdoptPet()}>Adopt</button>
         </main>
-      </section>
+      </article>
     );
   }
 }
