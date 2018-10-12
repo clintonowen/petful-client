@@ -1,24 +1,4 @@
-import {
-  fetchCatSuccess,
-  adoptCatSuccess,
-  fetchCat,
-  adoptCat
-} from './cat';
+import * as catActions from './cat';
+import * as dogActions from './dog';
 
-import {
-  fetchDogSuccess,
-  adoptDogSuccess,
-  fetchDog,
-  adoptDog
-} from './dog';
-
-export default {
-  fetchCatSuccess,
-  adoptCatSuccess,
-  fetchCat,
-  adoptCat,
-  fetchDogSuccess,
-  adoptDogSuccess,
-  fetchDog,
-  adoptDog
-}
+export { catActions, dogActions }
