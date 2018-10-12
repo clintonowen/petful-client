@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Dashboard from './components/Dashboard';
+import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import Dashboard from './components/Dashboard';
+import store from './store';
+import './index.css';
 
 const testCat = {
   imageURL:'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg', 
@@ -24,7 +26,13 @@ const testDog = {
   story: 'Owner Passed away'
 }
 
-ReactDOM.render(<Dashboard catToAdopt={testCat} dogToAdopt={testDog}/>, document.getElementById('root'));
+// console.log(store.getState());
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Dashboard catToAdopt={testCat} dogToAdopt={testDog}/>
+  </Provider>,
+  document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
