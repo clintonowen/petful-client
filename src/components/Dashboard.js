@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Dashboard.css';
 import Pet from './Pet';
-import { catActions, dogActions } from '../actions';
+import { catActions, dogActions, fetchPets } from '../actions';
 
 class Dashboard extends Component {
   componentDidMount() {
-    this.props.dispatch(catActions.fetchCat());
-    this.props.dispatch(dogActions.fetchDog());
+    this.props.dispatch(fetchPets());
   }
   adoptCat() {
     this.props.dispatch(catActions.adoptCat());
