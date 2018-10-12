@@ -1,0 +1,15 @@
+header {
+  text-align: center;
+}
+
+section img {
+  width: 100%;
+}
+
+dt {
+  font-weight: bold;
+}
+
+.pet-info {
+  padding: 20px;
+}
