@@ -20,6 +20,7 @@ export const catReducer = (state=inititalState, action) => {
   }
   else if (action.type === catActions.FETCH_CAT_ERROR) {
     return Object.assign({}, state, {
+      data: null,
       error: action.error,
       loading: false
     });

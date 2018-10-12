@@ -20,6 +20,7 @@ export const dogReducer = (state=inititalState, action) => {
   }
   else if (action.type === dogActions.FETCH_DOG_ERROR) {
     return Object.assign({}, state, {
+      data: null,
       error: action.error,
       loading: false
     });

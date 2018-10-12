@@ -9,10 +9,14 @@ class Dashboard extends Component {
     this.props.dispatch(catActions.fetchCat());
     this.props.dispatch(dogActions.fetchDog());
   }
-  adoptPet() {
-    console.log('Pet was adopted!');
+  adoptCat() {
+    this.props.dispatch(catActions.adoptCat());
+    console.log('Cat was adopted!');
   }
-
+  adoptDog() {
+    this.props.dispatch(dogActions.adoptDog());
+    console.log('Dog was adopted!');
+  }
   render() {
     let pets = [];
     if (this.props.catToAdopt) {
@@ -20,7 +24,7 @@ class Dashboard extends Component {
         <Pet 
         key="cat"
         petToAdopt={this.props.catToAdopt}
-        onAdoptPet={() => this.adoptPet()}
+        onAdoptPet={() => this.adoptCat()}
         />
       );
     }
@@ -29,9 +33,16 @@ class Dashboard extends Component {
         <Pet 
         key="dog"
         petToAdopt={this.props.dogToAdopt}
-        onAdoptPet={() => this.adoptPet()}
+        onAdoptPet={() => this.adoptDog()}
         />
       );
+    }
+    if (pets.length === 0) {
+      pets = (
+        <header className="column">
+          <h2>Sorry! No pets to adopt at this time. Check back later!</h2>
+        </header>
+      )
     }
     return (
       <div className="Dashboard">
@@ -49,7 +60,9 @@ class Dashboard extends Component {
 
 const mapStateToProps = state => ({
   catToAdopt: state.cat.data,
-  dogToAdopt: state.dog.data
+  catError: state.cat.error,
+  dogToAdopt: state.dog.data,
+  dogError: state.dog.error
 });
 
 export default connect(mapStateToProps)(Dashboard);
